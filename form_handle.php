@@ -1,23 +1,22 @@
 <?php
-$name=$_POST['name'];
-$visitor_email=$_POST['email'];
-$subject=$_POST['subject'];
-$message=$_POST['message'];
+$name = $_POST['name'];
+$visitor_email = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
 
-$email_form='info@cumail.in';
+$email_from = 'info@cumail.in';
 
-$email_subject='New Form Submission';
+$email_subject = 'New Form Submission';
 
-$email_body="User Name:$name.\n " .
-              "User Email:$visitor_email .\n " . 
-               "Subject:$subject.\n".
-               "User Message:$visitor_email .\n " ;
+$email_body = "User Name:$name.\n " .
+    "User Email:$visitor_email .\n " .
+    "Subject:$subject.\n" .
+    "User Message:$visitor_email .\n ";
 
 
-$to='dhruvgandhi870842@gmail.com';
-$headers=" From: $email_form \r\n";
-$headers .="Reply-To: $visitor_email \r\n";
+$to = 'dhruvgandhi870842@gmail.com';
+$headers = " From: $email_form \r\n";
+$headers .= "Reply-To: $visitor_email \r\n";
 
-mail($to,$email_subject,$email_body,$headers);
+mail($to, $email_subject, $email_body, $headers);
 header("Location: contact.html");
-?>
